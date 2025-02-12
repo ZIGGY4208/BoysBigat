@@ -29,7 +29,7 @@ const teamMembers = [
 
 const Cards = () => {
   return (
-    <section className="bg-[#0a0d1a] text-white py-16 h-screen">
+    <section className="bg-[#0a0d1a] text-white py-16 min-h-screen">
       <h2 className="text-3xl font-bold text-center mb-10">
         Our <span className="text-blue-500">Organisation</span>
       </h2>

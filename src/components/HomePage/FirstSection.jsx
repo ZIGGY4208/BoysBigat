@@ -10,12 +10,12 @@ const FirstSection = () => {
         Our <span className='ml-3 text-blue-500'>Slogans</span>
       </h2>
       {/* Subtitle below the heading */}
-      <p className="flex items-center justify-center">
+      <p className="flex items-center justify-center text-center">
         These Are Our Code That Keeps Us Strong And Going!
       </p>
       
       {/* Container for the slogan cards */}
-      <div className='flex items-center justify-center mt-10 pt-1 border'>
+      <div className='flex items-center justify-center mt-10 pt-1 '>
         {/* Wrapper for all the slogan cards */}
         <div className="flex justify-center flex-wrap gap-8">
           

@@ -9,17 +9,20 @@ import Slider from './Slider';
 
 const Home = () => {
   return (
-    <div className=" h-screen w-screen overflow-x-hidden ">
-      <div className="relative bg-hero-section bg-cover bg-center h-[100%] w-full">
-        <div className="absolute inset-0 bg-black bg-opacity-50">
-          <HeaderSection />
-          <Slider/>
+    <div className="h-screen w-screen overflow-x-hidden">
+      <div className="bg-hero-section bg-cover bg-center h-screen w-full flex flex-col justify-center">
+        <div className="bg-black bg-opacity-50 w-full h-full ">
+          <div>
+            <HeaderSection/>
+          </div>
+          <div className='w-full h-full flex items-center justify-center'>
+            <Slider/>
+          </div>
         </div>
-      
       </div>
-      <div >
+      <div>
         <FirstSection/>
-        <SecondSection/>
+        <SecondSection />
         <Cards/>
         <AboutSection/>
         <FooterSection/>

@@ -1,0 +1,320 @@
+import React from 'react'
+
+const SecondSection = () => {
+  return (
+    <div>
+      <div className='relative bg-about-img bg-cover bg-center w-full h-[1000px] sm:h-[1900px] border-box'>
+        <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center text-center px-4">
+          <h1 className='text-white text-3xl sm:text-4xl mt-10 font-semibold'>
+            About <span className='ml-2 text-blue-500'>Us</span>
+          </h1>
+          <p className='text-white text-sm sm:text-base max-w-[90%] md:max-w-[70%] mx-auto'>
+            The Boys' Brigade Limbe Field: a stalwart Christian organization committed to 
+            fostering faith, character, and service among boys in Limbe, Cameroon.
+          </p>
+
+          <div className='flex flex-col md:flex-row items-center justify-center gap-10 md:gap-[200px] mt-8'>
+            <div className='w-[250px] sm:w-[300px] flex items-center justify-center'>
+              <img src="version.svg.png" alt=""/>
+            </div>
+            <div className='w-[90%] md:w-[500px]'>
+              <h3 className='text-white text-xl sm:text-2xl md:text-[30px] mb-3'>
+                We Are Boys' Brigade Limbe Field
+              </h3>
+              <p className='text-white text-sm sm:text-base text-start mb-5 leading-6'>
+                The Boys' Brigade Limbe Field, an integral component of the Cameroon 
+                Baptist Convention, stands as a beacon of Christian discipleship and 
+                spiritual nurturing in the vibrant city of Limbe, Cameroon.
+              </p>
+              <p className='text-white text-sm sm:text-base text-start mb-3 leading-6'>
+                True to the movement's motto, "Sure and steadfast" (Hebrew 6:19b), 
+                the brigade exemplifies unwavering commitment to instilling faith, 
+                discipline, and purpose in the lives of boys within its ranks.
+              </p>
+              <p className='text-white text-sm sm:text-base text-start mb-3 leading-6'>
+                Guided by the foundational principles of the Boys' Brigade, the aim 
+                of the Limbe Field chapter is to preach the gospel, show love, and 
+                actively seek to bring more boys to Christ.
+              </p>
+              <p className='text-white text-sm sm:text-base text-start mb-3 leading-6'>
+                Through a rich tapestry of spiritual growth, character development, and 
+                community outreach, the brigade empowers its members to affirm their faith, 
+                serve their communities, and develop into holistic individuals rooted in Christian values.
+              </p>
+              <p className='text-white text-sm sm:text-base text-start mb-3 leading-6'>
+                At the heart of its mission, the objective of the Boys' Brigade Limbe Field is 
+                the advancement of Christ’s kingdom amongst boys, as well as the promotion of 
+                habits of obedience, discipline, and self-respect—values that lead to true Christian manliness.
+              </p>
+              <p className='text-white text-sm sm:text-base text-start mb-5 leading-6'>
+                Through the nurturing of these principles, the brigade cultivates a generation 
+                of young men equipped to contribute positively to society, uphold moral integrity, 
+                and serve as pillars of their communities.
+              </p>
+
+              <button className='bg-blue-950 text-white px-6 py-3 sm:px-8 sm:py-3 rounded-md'>
+                Read More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default SecondSection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { useState } from "react";
+
+export default function RegistrationForm() {
+  const [formData, setFormData] = useState({
+    association: "",
+    secondDropdown: "",
+    name: "",
+    dob: "",
+    role: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
+  return (
+    <div className="max-w-lg mx-auto mt-10 p-8 bg-white shadow-lg rounded-xl border border-gray-200 md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+      <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Register</h2>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Association Dropdown */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Select Association</label>
+          <select
+            name="association"
+            value={formData.association}
+            onChange={handleChange}
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          >
+            <option value="">Choose an association</option>
+            <option value="limbe-north">Limbe North Association</option>
+            <option value="limbe-south">Limbe South Association</option>
+            <option value="tiko">Tiko Association</option>
+          </select>
+        </div>
+
+        {/* Second Dropdown */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Second Dropdown</label>
+          <select
+            name="secondDropdown"
+            value={formData.secondDropdown}
+            onChange={handleChange}
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          >
+            <option value="">Choose an option</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+          </select>
+        </div>
+
+        {/* Name Input */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Full Name</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            placeholder="Enter your name"
+          />
+        </div>
+
+        {/* Date of Birth */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Date of Birth</label>
+          <input
+            type="date"
+            name="dob"
+            value={formData.dob}
+            onChange={handleChange}
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+        </div>
+
+        {/* Position/Role */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Position/Role</label>
+          <input
+            type="text"
+            name="role"
+            value={formData.role}
+            onChange={handleChange}
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            placeholder="Enter your position"
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
+// Import the `useState` hook from React to manage state in this functional component.
+import { useState } from "react";
+
+// Define the main component for the registration form.
+export default function RegistrationForm() {
+  // Initialize state using `useState`. `formData` holds the form values, and `setFormData` updates them.
+  const [formData, setFormData] = useState({
+    association: "", // Stores the selected association from the dropdown.
+    secondDropdown: "", // Stores the selected option from the second dropdown.
+    name: "", // Stores the user's full name.
+    dob: "", // Stores the user's date of birth.
+    role: "", // Stores the user's position or role.
+  });
+
+  // Function to handle changes in the form inputs.
+  const handleChange = (e) => {
+    // Update the state by spreading the existing `formData` and overwriting the changed field.
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Function to handle form submission.
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior (page reload).
+    console.log(formData); // Log the form data to the console (for now).
+  };
+
+  // Render the form UI using JSX.
+  return (
+    // Container for the form with Tailwind CSS classes for styling.
+    <div className="max-w-lg mx-auto mt-10 p-8 bg-white shadow-lg rounded-xl border border-gray-200 md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+      {/* Form title */}
+      <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Register</h2>
+
+      {/* Form element with `onSubmit` handler */}
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Association Dropdown */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Select Association</label>
+          <select
+            name="association" // Matches the key in `formData`.
+            value={formData.association} // Tied to the state.
+            onChange={handleChange} // Calls `handleChange` when the user selects an option.
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          >
+            <option value="limbe-north">Limbe North Association</option>
+            <option value="limbe-south">Limbe South Association</option>
+            <option value="tiko">Tiko Association</option>
+          </select>
+        </div>
+
+        {/* Second Dropdown */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Second Dropdown</label>
+          <select
+            name="secondDropdown" // Matches the key in `formData`.
+            value={formData.secondDropdown} // Tied to the state.
+            onChange={handleChange} // Calls `handleChange` when the user selects an option.
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          >
+            <option value="">Choose an option</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+          </select>
+        </div>
+
+        {/* Name Input */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Full Name</label>
+          <input
+            type="text"
+            name="name" // Matches the key in `formData`.
+            value={formData.name} // Tied to the state.
+            onChange={handleChange} // Calls `handleChange` when the user types.
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            placeholder="Enter your name"
+          />
+        </div>
+
+        {/* Date of Birth Input */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Date of Birth</label>
+          <input
+            type="date"
+            name="dob" // Matches the key in `formData`.
+            value={formData.dob} // Tied to the state.
+            onChange={handleChange} // Calls `handleChange` when the user selects a date.
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+        </div>
+
+        {/* Position/Role Input */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Position/Role</label>
+          <input
+            type="text"
+            name="role" // Matches the key in `formData`.
+            value={formData.role} // Tied to the state.
+            onChange={handleChange} // Calls `handleChange` when the user types.
+            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            placeholder="Enter your position"
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  );
+}

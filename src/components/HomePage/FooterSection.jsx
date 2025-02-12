@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const FooterSection = () => {
   return (
@@ -8,20 +9,29 @@ const FooterSection = () => {
         {/* Address Section */}
         <div>
           <h2 className="text-lg font-semibold mb-3">Address</h2>
-          <p className="flex items-center gap-2">📍 Limbe, Southwest, Cameroon</p>
-          <p className="flex items-center gap-2">📞 Call +237673578106</p>
-          <p className="flex items-center gap-2">📧 LimbeFieldBoyBrigate@gmail.com</p>
+          <p className="flex items-center gap-2">
+            <FaMapMarkerAlt className="text-white" />
+            Limbe, Southwest, Cameroon
+          </p>
+          <p className="flex items-center gap-2">
+            <FaPhoneAlt className="text-white" />
+            Call +237673578106
+          </p>
+          <p className="flex items-center gap-2">
+            <FaEnvelope className="text-white" />
+            LimbeFieldBoyBrigate@gmail.com
+          </p>
           
           {/* Social Media Icons */}
           <div className="flex gap-4 mt-3 text-xl">
             <a href="#" className="hover:text-gray-400">
-              <FaFacebookF />
+              <FaFacebookF className="text-white" />
             </a>
             <a href="#" className="hover:text-gray-400">
-              <FaTwitter />
+              <FaTwitter className="text-white" />
             </a>
             <a href="#" className="hover:text-gray-400">
-              <FaInstagram />
+              <FaInstagram className="text-white" />
             </a>
           </div>
         </div>
